@@ -18,7 +18,7 @@ clf = Pipeline([('scl', StandardScaler()),('pca', PCA(n_components=50)), ('clf',
 gs = GridSearchCV(estimator=clf, 
                   param_grid=parameters, 
                   scoring='accuracy', 
-                  cv=10,
+                  cv=3,
                   n_jobs=-1)
 gs = gs.fit(train_X, train_Y)
 print(gs.best_score_)
